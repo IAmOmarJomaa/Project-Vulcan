@@ -1,0 +1,17 @@
+# AI Models & Weights
+*.safetensors
+*.gguf
+*.sft
+*.ckpt
+
+# Output Assets
+final_showcase/
+*.png
+*.jpg
+*.jpeg
+
+# Environment & System
+.env
+venv/
+__pycache__/
+.DS_Store
