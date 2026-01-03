@@ -2,7 +2,7 @@
 
 ### 🔬 Project Overview
 Project Vulcan enables the deployment of the 12B-parameter Flux.1 model on consumer hardware with limited VRAM. By architecting a hybrid pipeline, this project successfully bypasses the hardware constraints of the NVIDIA RTX 4050 (6GB) to run a model that typically requires over 24GB of VRAM.
-
+```bash
 %%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#ff9900', 'edgeLabelBackground':'#2d2d2d', 'tertiaryColor': '#2d2d2d'}}}%%
 graph TD
     subgraph CLOUD ["☁️ Cloud Training Pipeline (Tesla T4)"]
@@ -35,7 +35,7 @@ graph TD
     classDef model fill:#0a77b6,stroke:#fff,stroke-width:2px,color:#fff;
     classDef prompt fill:#2d2d2d,stroke:#ff9900,stroke-width:1px,color:#ff9900;
     linkStyle 0,1,2 stroke:#ff9900,stroke-width:2px,color:white;
-
+```
 
 
 
