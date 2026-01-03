@@ -42,7 +42,6 @@ graph TD
 
 
 
-
 ### 🏗️ Technical Architecture
 The system is built on three core pillars of optimization:
 1.  **Decoupled Learning (Cloud):** Fine-tuned identity-specific weights (**LoRA**) on Kaggle using Tesla T4 GPUs to handle the high-memory requirements (40GB+) of the training phase.
