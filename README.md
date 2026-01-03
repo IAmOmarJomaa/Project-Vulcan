@@ -78,12 +78,14 @@ pip install -r requirements.txt
 python core/director.py
 ```
 
-
+```mermaid
 ### 📦 Asset Acquisition
 To run this project, you must download the quantized weights and place them in your host ComfyUI directory:
-```mermaid
-1. **UNET Model:** [Download Flux.1-Dev GGUF (Q4_K_S)]([PASTE_YOUR_HUGGINGFACE_LINK_HERE](https://huggingface.co/omardjomaa/flux1-dev-gguf-quantized/resolve/main/flux1-dev-Q4_K_S.gguf?download=true))
-   * Place in: `ComfyUI/models/unet/`
-2. **LoRA:** (Optional) Use your own trained identity LoRA.
-   * Place in: `ComfyUI/models/loras/`
+
+1. **UNET Model:** [Download Flux.1-Dev GGUF (Q4_K_S)](https://huggingface.co/omardjomaa/flux1-dev-gguf-quantized/resolve/main/flux1-dev-Q4_K_S.gguf?download=true)
+   * **Destination:** `ComfyUI/models/unet/`
+2. **LoRA (Identity):** Use your own trained identity LoRA or the one provided in the assets.
+   * **Destination:** `ComfyUI/models/loras/`
+3. **VAE/CLIP:** Ensure you have the standard Flux VAE and CLIP encoders.
+   * **Destination:** `ComfyUI/models/vae/` and `ComfyUI/models/clip/`
 ```
