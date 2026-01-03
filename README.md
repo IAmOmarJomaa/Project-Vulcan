@@ -6,7 +6,7 @@ Project Vulcan enables the deployment of the 12B-parameter Flux.1 model on consu
 %%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#ff9900', 'edgeLabelBackground':'#2d2d2d', 'tertiaryColor': '#2d2d2d'}}}%%
 graph TD
     subgraph CLOUD ["☁️ Cloud Training Pipeline (Tesla T4)"]
-        Dataset[/"📂 Dataset: dataset_album_pro.jpg"/]:::asset
+        Dataset[/"📂 Dataset: ![Image](dataset_album_pro.jpg)"/]:::asset
         LoRA[/"🧬 LoRA Weights (.safetensors)"/]:::model
         
         Dataset ==>|"🔥 Fine-Tuning (Training)"| LoRA
