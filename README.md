@@ -3,6 +3,46 @@
 ### 🔬 Project Overview
 Project Vulcan enables the deployment of the 12B-parameter Flux.1 model on consumer hardware with limited VRAM. By architecting a hybrid pipeline, this project successfully bypasses the hardware constraints of the NVIDIA RTX 4050 (6GB) to run a model that typically requires over 24GB of VRAM.
 
+%%{init: {'theme': 'dark', 'themeVariables': { 'primaryColor': '#ff9900', 'edgeLabelBackground':'#2d2d2d', 'tertiaryColor': '#2d2d2d'}}}%%
+graph TD
+    subgraph CLOUD ["☁️ Cloud Training Pipeline (Tesla T4)"]
+        Dataset[/"📂 Dataset: dataset_album_pro.jpg"/]:::asset
+        LoRA[/"🧬 LoRA Weights (.safetensors)"/]:::model
+        
+        Dataset ==>|"🔥 Fine-Tuning (Training)"| LoRA
+    end
+
+    subgraph EDGE ["⚡ Edge Inference Pipeline (RTX 4050 6GB)"]
+        direction TB
+        Prompts[/"🗣️ Inputs:
+        +Positive: Stylebook Style
+        -Negative: blur, distortion"/]:::prompt
+        
+        QModel[("🧠 Quantified Model
+        Flux.1-Dev (GGUF Q4_K_S)
+        6.8GB VRAM")]:::model
+        
+        Outputs[/"🖼️ Outputs:
+        Stylebook_page-1.jpg
+        Stylebook_page-2.jpg"/]:::asset
+
+        Prompts ==> QModel ==> Outputs
+    end
+
+    LoRA -.->|"Weight Transfer"| QModel
+
+    classDef asset fill:#2d2d2d,stroke:#fff,stroke-width:1px,color:#fff,stroke-dasharray: 5 5;
+    classDef model fill:#0a77b6,stroke:#fff,stroke-width:2px,color:#fff;
+    classDef prompt fill:#2d2d2d,stroke:#ff9900,stroke-width:1px,color:#ff9900;
+    linkStyle 0,1,2 stroke:#ff9900,stroke-width:2px,color:white;
+
+
+
+
+
+
+
+
 ### 🏗️ Technical Architecture
 The system is built on three core pillars of optimization:
 1.  **Decoupled Learning (Cloud):** Fine-tuned identity-specific weights (**LoRA**) on Kaggle using Tesla T4 GPUs to handle the high-memory requirements (40GB+) of the training phase.
