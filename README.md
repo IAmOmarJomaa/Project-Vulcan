@@ -76,9 +76,7 @@ Ensure the following files are present in your ComfyUI directory:
 pip install -r requirements.txt
 # Run the Director
 python core/director.py
-```
 
-```mermaid
 ### 📦 Asset Acquisition
 To run this project, you must download the quantized weights and place them in your host ComfyUI directory:
 
@@ -88,4 +86,3 @@ To run this project, you must download the quantized weights and place them in y
    * **Destination:** `ComfyUI/models/loras/`
 3. **VAE/CLIP:** Ensure you have the standard Flux VAE and CLIP encoders.
    * **Destination:** `ComfyUI/models/vae/` and `ComfyUI/models/clip/`
-```
