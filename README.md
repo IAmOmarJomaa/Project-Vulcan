@@ -76,3 +76,13 @@ Ensure the following files are present in your ComfyUI directory:
 pip install -r requirements.txt
 # Run the Director
 python core/director.py
+
+
+
+### 📦 Asset Acquisition
+To run this project, you must download the quantized weights and place them in your host ComfyUI directory:
+
+1. **UNET Model:** [Download Flux.1-Dev GGUF (Q4_K_S)]([PASTE_YOUR_HUGGINGFACE_LINK_HERE](https://huggingface.co/omardjomaa/flux1-dev-gguf-quantized/resolve/main/flux1-dev-Q4_K_S.gguf?download=true))
+   * Place in: `ComfyUI/models/unet/`
+2. **LoRA:** (Optional) Use your own trained identity LoRA.
+   * Place in: `ComfyUI/models/loras/`
