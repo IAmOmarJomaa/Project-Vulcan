@@ -76,6 +76,7 @@ Ensure the following files are present in your ComfyUI directory:
 pip install -r requirements.txt
 # Run the Director
 python core/director.py
+```
 
 ### 📦 Asset Acquisition
 To run this project, you must download the quantized weights and place them in your host ComfyUI directory:
